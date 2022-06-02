@@ -1,0 +1,25 @@
+version: "3.7"
+
+networks:
+  proxy-network:
+    external: "true"
+
+
+services:
+    german-webapp:
+      build: 
+        context: .
+        dockerfile: docker/prod/Dockerfile
+      image: "german-webapp-nextjs:latest"
+      container_name: "german-webapp"
+      restart: "always"
+      ports:
+        - 3003:3000
+      networks:
+        - "proxy-network"
+      environment:
+        VIRTUAL_HOST: learngerman.shivamnaik.de
+        LETSENCRYPT_HOST: learngerman.shivamnaik.de
+        LETSENCRYPT_EMAIL: "ichbinshivamsnaik@outlook.com"
+        VIRTUAL_PORT: 3000
+
