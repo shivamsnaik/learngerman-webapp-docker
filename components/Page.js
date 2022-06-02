@@ -10,7 +10,7 @@ const Page = ({children}) => {
   return(
       <div style={{ backgroundColor: "white" }} className={styles.container}>
         <div style={{flex: "1"}}>
-          <Navbar navbar_list = {navbar_list}/>
+          <Navbar title={"German Learning App"} navbar_list = {navbar_list}/>
           <div className={styles.page_content}>
             {children}
           </div>
