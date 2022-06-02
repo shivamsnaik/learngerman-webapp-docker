@@ -1,5 +1,5 @@
 import Navbar from '../components/Navbar'
-import styles from '../styles/Page.module.css'
+import styles from '../styles/Page.module.scss'
 
 const Page = ({children}) => {
 

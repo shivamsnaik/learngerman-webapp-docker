@@ -1,4 +1,4 @@
-import styles from '../styles/Navbar.module.css'
+import styles from '../styles/Navbar.module.scss'
 import button, { useEffect, useState } from 'react'
 import Link from 'next/link'
 export default function Navbar(props) {
