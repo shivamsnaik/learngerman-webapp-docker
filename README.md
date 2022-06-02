@@ -1,15 +1,8 @@
-# Personal Portfolio webapp using Next.js framework
+# German learning webapp using Next.js framework
 
 This project is built using Next.js framework and containerized using Docker. 
 
 ## How to use?
-
-- Docker Run
-  - Execute the following ```docker``` command to build (or use a local existing copy of) a docker image named ```portfolio-nextjs:latest``` and deploy the container named ```nextjs``` :
-
-    ```
-    docker run --detach --name nextjs shivamsnaik/portfolio-nextjs:latest
-    ```
 
 - Docker Compose **(recommended)**
   - If the docker is running behind an Nginx reverse-proxy with the lets-encrypt support ([click here to find how?](https://github.com/shivamsnaik/nextcloud-reverseproxy-docker)), you can alternatively run the following script to run the container assigned to a domain, e.g., portfolio.example.com
