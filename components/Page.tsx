@@ -1,17 +1,17 @@
-import Navbar from '../components/Navbar'
+import Navbar from './Navbar'
 import styles from '../styles/Page.module.scss'
 
 const Page = ({children}) => {
 
   const navbar_list = [
     ["About","/about"],
-  ];
+  ]
   
   return(
-      <div style={{ backgroundColor: "white" }} className={styles.container}>
+      <div style={{ backgroundColor: "white"}} className={styles.container}>
         <div style={{flex: "1"}}>
           <Navbar title={"German Learning App"} navbar_list = {navbar_list}/>
-          <div className={styles.page_content}>
+          <div className={styles.page_content} style={{}}>
             {children}
           </div>
         </div>

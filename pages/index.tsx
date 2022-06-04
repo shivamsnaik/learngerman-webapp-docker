@@ -1,14 +1,28 @@
 import Page from "../components/Page"
 import Navbar from '../components/Navbar'
+import Textbox from "../components/Textbox";
 
 export default function Home() {
+
+  const displayMeaning = (e) => {
+    e.preventDefault();
+    console.log("Click triggered by")
+  }
+
     return (
           <Page>
             <p style={{fontSize: "2.5rem", fontWeight: "bold"}}>Guten Tag! Los geht's!</p>
-            <div style={{marginTop: "100px", display: "flex", flexDirection:"row", justifyContent:"space-evenly"}}>
-              <input style={{maxWidth: "20rem", margin: "0 10px 0 10px"}} name="words" placeholder="Enter a word"/>
-              <button style={{maxWidth: "10rem", margin: "0 10px 0 10px"}}> Enter word </button>
+            <div style={{marginTop: "100px", display: "flex", flexDirection: "row"}}>
+              <Textbox style={{marginTop: "30px", maxHeight: "15rem"}}>
+                <p key={1} onClick={displayMeaning}>Ausdrücken</p>
+                <p key={2} onClick={displayMeaning}>Ausdrücken</p>
+                <p key={3} onClick={displayMeaning}>Ausdrücken</p>
+              </Textbox>
+              <Textbox style={{marginTop: "30px", maxHeight: "15rem"}}>
+                <p>Helloworld</p>
+              </Textbox>
             </div>
+                      
           </Page>
     );
           

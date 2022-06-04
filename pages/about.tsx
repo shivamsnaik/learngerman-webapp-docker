@@ -1,12 +1,12 @@
 import Page from "../components/Page";
 
-const Academics = () => {
+const About = () => {
 
     return(
         <Page>
-            <h1>Work Experience</h1>
+            <h1>About Me</h1>
         </Page>
     );
 }
 
-export default Academics;
+export default About;
