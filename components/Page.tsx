@@ -1,18 +1,27 @@
 import Navbar from './Navbar'
 import styles from '../styles/Page.module.scss'
+import { HTMLAttributes, ReactElement } from 'react';
 
-const Page = ({children}) => {
+
+type PageProps = {
+  children: any,
+  style?: any
+}; 
+
+const Page = ({children, style}: PageProps) => {
 
   const navbar_list = [
     ["About","/about"],
   ]
   
   return(
-      <div style={{ backgroundColor: "white"}} className={styles.container}>
-        <div style={{flex: "1"}}>
+      <div className={styles.container}>
+        <div className={styles.sub_container}>
           <Navbar title={"German Learning App"} navbar_list = {navbar_list}/>
-          <div className={styles.page_content} style={{}}>
-            {children}
+          <div className={styles.content_wrapper}>
+            <div className={styles.page_content}>
+              {children}
+            </div>
           </div>
         </div>
         <footer className={styles.footer}>

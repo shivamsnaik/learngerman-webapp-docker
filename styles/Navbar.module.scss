@@ -5,6 +5,8 @@ $max-width-calculation: calc(1020px - (30px * 2));
 $hover-color: #f1f1f1;
 
 .navbar {
+    display: flex;
+    flex-grow: 0;
     position: sticky;
     z-index: 40;
     min-height: 20px;
@@ -14,6 +16,7 @@ $hover-color: #f1f1f1;
     border-width: 1px;
 
     & .content{
+        flex: 1;
         padding: 0 20px 0 20px;
         margin-left: auto;
         margin-right: auto;
