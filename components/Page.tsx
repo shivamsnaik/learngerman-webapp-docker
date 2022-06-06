@@ -12,6 +12,7 @@ const Page = ({children, style}: PageProps) => {
 
   const navbar_list = [
     ["About","/about"],
+    ["Add New Words","/new-words"],
   ]
   
   return(
@@ -19,7 +20,7 @@ const Page = ({children, style}: PageProps) => {
         <div className={styles.sub_container}>
           <Navbar title={"German Learning App"} navbar_list = {navbar_list}/>
           <div className={styles.content_wrapper}>
-            <div className={styles.page_content}>
+            <div className={styles.page_content} style={style}>
               {children}
             </div>
           </div>

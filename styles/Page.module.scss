@@ -12,20 +12,18 @@
     flex-direction: column;
 
     & .content_wrapper {
+      display: flex;
       flex:1;
 
       & .page_content{
+        flex: 1;
         max-width: calc(1020px - (30px * 2));
         margin-left: auto;
+        padding: 0 20px 0 20px;
         margin-right: auto;
         display: flex;
         flex-direction: column;
         position: relative;
-
-
-        & div{
-          flex: 1;
-        }
 
       }
     }

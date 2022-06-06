@@ -1,0 +1,14 @@
+.button_wrapper{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & .button{
+        flex: 1;
+        flex-grow: 0;
+        padding: 10px 10px 10px 10px;
+        border: 0px;
+        border-radius: 5px;
+    }
+}

@@ -1,0 +1,41 @@
+.tag_line {
+    font-size: 2.0ßrem;
+    font-weight: bold;
+    flex-grow: 0;
+}
+
+.page_content{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+
+    & .list_wrapper {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+    }
+
+    & .textarea_wrapper{
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        border-radius: 3px;
+    }
+
+    & .solid_separator{
+        border-top: 3px solid #bbb;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .page_content{
+        flex-direction: column;
+
+        & .textarea_wrapper{
+        
+            padding-top: 50px;
+        }
+
+    }
+}

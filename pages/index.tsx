@@ -1,70 +1,60 @@
 import Page from "../components/Page"
-import Navbar from '../components/Navbar'
-import Textbox from "../components/Textbox";
+import List from "../components/List"
+import TextArea from "../components/TextArea"
+import styles from "../styles/index.module.scss"
+import { useEffect, useState } from "react"
+import { app, database } from '../firebaseConfig';
+import { collection, addDoc, getDocs, CollectionReference } from 'firebase/firestore';
 
 export default function Home() {
 
-  const displayMeaning = (e) => {
+  const [dbInstance, setDbInstance] = useState(collection(database, "german-word-meanings"));
+  const [wordList, setWordList] = useState([])
+  const [wordMeaning, setWordMeaning] = useState("");
+  const getWords = () => {
+    getDocs(dbInstance)
+      .then(data => {
+        const listItems = [];
+        data.docs.map((item) => {
+          listItems.push({...item.data()})
+        });
+        setWordList(listItems);
+        console.log(listItems)
+    });
+  };
+
+  useEffect(() => {
+    getWords()
+  },[]);
+
+  const displayMeaning = (e:any) => {
     e.preventDefault();
-    console.log("Click triggered by")
+    setWordMeaning(e.currentTarget.getAttribute("id"))
   }
 
     return (
-          <Page>
-            <p style={{fontSize: "2.5rem", fontWeight: "bold"}}>Guten Tag! Los geht's!</p>
-            <div style={{marginTop: "100px", display: "flex", flexDirection: "row"}}>
-              <Textbox style={{marginTop: "30px", maxHeight: "15rem"}}>
-                <p key={1} onClick={displayMeaning}>Ausdrücken</p>
-                <p key={2} onClick={displayMeaning}>Ausdrücken</p>
-                <p key={3} onClick={displayMeaning}>Ausdrücken</p>
-              </Textbox>
-              <Textbox style={{marginTop: "30px", maxHeight: "15rem"}}>
-                <p>Helloworld</p>
-              </Textbox>
+          <Page style={{height: "100%"}}>
+            <p className={styles.tag_line}>Guten Tag! Los geht's!</p>
+            <div className={styles.page_content}>
+              <div className={styles.list_wrapper}>
+                <h3 style={{margin: "0", display:"flex", justifyContent: "center", textDecoration: "underline"}}>List of words</h3>
+                <List style={{marginTop: "20px", maxHeight: "15rem"}}>
+                  {wordList.map(item => {
+                    return(<p id={item["meaning"]} onClick={displayMeaning}>{item["word"]}</p>)
+                  })}
+                </List>
+              </div>
+              <hr className={styles.solid_separator}/>
+              <div className={styles.textarea_wrapper}>
+                <h3 style={{flex:1, margin: "0", display:"flex", justifyContent: "center", alignItems: "center", 
+                  maxHeight: "50px"}}>Meaning</h3>
+                <TextArea style={{ flex: 10, maxHeight: "15rem"}}>
+                  <p placeholder="Word meaning will appear here">{wordMeaning}</p>
+                </TextArea>
+              </div>
+
+              
             </div>
-                      
           </Page>
     );
-          
-            {/* <main className={styles.main}>
-        <p className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js</a> on Docker!
-        </p>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
- */}
 };

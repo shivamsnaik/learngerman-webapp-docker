@@ -1,0 +1,30 @@
+$hover-color: #f1f1f1;
+
+.container{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-height: 15rem;
+
+
+    & .scroll_area {
+        flex: 1;
+        overflow-x: hidden;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    & p{
+        margin: 0 3rem 0 3rem;
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+
+        &:hover{
+            background-color: $hover-color;
+            cursor:pointer;
+        }
+
+    }
+}
