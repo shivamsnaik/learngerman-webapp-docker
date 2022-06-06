@@ -5,6 +5,7 @@ import styles from "../styles/index.module.scss"
 import { useEffect, useState } from "react"
 import { app, database } from '../firebaseConfig';
 import { collection, addDoc, getDocs, CollectionReference } from 'firebase/firestore';
+import { Carousel } from "react-bootstrap"
 
 export default function Home() {
 
@@ -33,28 +34,25 @@ export default function Home() {
   }
 
     return (
-          <Page style={{height: "100%"}}>
-            <p className={styles.tag_line}>Guten Tag! Los geht's!</p>
-            <div className={styles.page_content}>
-              <div className={styles.list_wrapper}>
-                <h3 style={{margin: "0", display:"flex", justifyContent: "center", textDecoration: "underline"}}>List of words</h3>
-                <List style={{marginTop: "20px", maxHeight: "15rem"}}>
-                  {wordList.map(item => {
-                    return(<p id={item["meaning"]} onClick={displayMeaning}>{item["word"]}</p>)
-                  })}
-                </List>
-              </div>
-              <hr className={styles.solid_separator}/>
-              <div className={styles.textarea_wrapper}>
-                <h3 style={{flex:1, margin: "0", display:"flex", justifyContent: "center", alignItems: "center", 
-                  maxHeight: "50px"}}>Meaning</h3>
-                <TextArea style={{ flex: 10, maxHeight: "15rem"}}>
-                  <p placeholder="Word meaning will appear here">{wordMeaning}</p>
-                </TextArea>
-              </div>
-
-              
-            </div>
-          </Page>
+      <>
+      <Page>
+        <p className={styles.tag_line}>Guten Tag! Los geht's!</p>
+        <div className={styles.page_content}>
+          <Carousel  className={styles.corousal} interval={null}>
+          {wordList.map(item => {
+                    return(
+                      <Carousel.Item key={item["word"]} className={styles.corousal_item}>
+                          <h3 className={styles.word_text}>{item["word"]}</h3>
+                          <Carousel.Caption>
+                            <p className={styles.meaning_text}>{item["meaning"]}</p>
+                          </Carousel.Caption>
+                      </Carousel.Item>
+                    )
+          })}
+            
+          </Carousel>
+        </div> 
+      </Page>
+      </>
     );
 };
