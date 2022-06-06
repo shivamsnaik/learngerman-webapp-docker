@@ -62,8 +62,8 @@ export default function NewWords() {
   const  addWordToList = (event:any) => {
     event.preventDefault();
     addDoc(dbInstance, {
-      word: word.current.value,
-      meaning: meaning.current.value
+      word: word.current.value.toLowerCase(),
+      meaning: meaning.current.value.toLowerCase()
     })
       .then(()=> {
 

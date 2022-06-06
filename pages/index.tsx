@@ -33,6 +33,10 @@ export default function Home() {
     setWordMeaning(e.currentTarget.getAttribute("id"))
   }
 
+  const capitalizeWords = (word:string) => {
+    return word.charAt(0).toUpperCase() + word.slice(1)
+  };
+
     return (
       <>
       <Page>
@@ -42,9 +46,9 @@ export default function Home() {
           {wordList.map(item => {
                     return(
                       <Carousel.Item key={item["word"]} className={styles.corousal_item}>
-                          <h3 className={styles.word_text}>{item["word"]}</h3>
+                          <h3 className={styles.word_text}>{capitalizeWords(item["word"])}</h3>
                           <Carousel.Caption>
-                            <p className={styles.meaning_text}>{item["meaning"]}</p>
+                            <p className={styles.meaning_text}>{capitalizeWords(item["meaning"])}</p>
                           </Carousel.Caption>
                       </Carousel.Item>
                     )
