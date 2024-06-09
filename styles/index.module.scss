@@ -13,42 +13,21 @@ $border-color: #FF331F;
     flex-direction: row;
     flex: 1;
     //flex-grow: 0;
-    margin-top: 200px;
     justify-content: center;
-
-    & .corousal{
-        display: flex;
-        border-radius: 10px;
-        height: 20rem;
-        width: 20rem;
-        background-color: $background-color;
-        border: 1px $border-color;
-        padding: 20px;
-
-        & .corousal_item{
-            height: 100%;
-
-            & .word_text {
-                text-align: center;
-                font-size: 3rem;
-            }
-    
-            & .meaning_text {
-                font-size: x-large;
-    
-            }
-        }
-        
+    margin: 15% auto 10% auto;
+    & .table{
+        height: 500px;
+        width: 500px;
     }
 }
 
 @media (max-width: 600px) {
 
     .page_content{
-        margin-top: 100px;
-        & .corousal{
-            height: 20rem;
-            width: 20rem;
+        margin: 5% 0 5% 0;
+        & .table{
+            height: 100%;
+            width: 100%;
         }
 
     }

@@ -12,7 +12,7 @@ const Page = ({children, style}: PageProps) => {
 
   const navbar_list = [
     ["About","/about"],
-    ["Add New Words","/new-words"],
+    ["Add Words","/new-words"],
   ]
   
   return(

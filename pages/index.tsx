@@ -6,6 +6,20 @@ import { useEffect, useState } from "react"
 import { app, database } from '../firebaseConfig';
 import { collection, addDoc, getDocs, CollectionReference } from 'firebase/firestore';
 import { Carousel } from "react-bootstrap"
+import { DataGrid, GridColDef } from '@mui/x-data-grid';
+
+const columns: GridColDef[] = [
+  { field: 'word', headerName: 'Nouns', flex: 1},
+  { field: 'meaning', headerName: 'Meaning',flex:1.5,},
+];
+
+const capitalizeWords = (words:string) => {
+  return words
+    .toLowerCase()
+    .split(" ")
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+};
 
 export default function Home() {
 
@@ -17,8 +31,11 @@ export default function Home() {
       .then(data => {
         const listItems = [];
         data.docs.map((item) => {
-          listItems.push({...item.data()})
+          const word = item.data()["word"];
+          const meaning = item.data()["meaning"];
+          listItems.push({"word": capitalizeWords(word), "meaning": capitalizeWords(meaning)})
         });
+        
         setWordList(listItems);
         console.log(listItems)
     });
@@ -33,30 +50,35 @@ export default function Home() {
     setWordMeaning(e.currentTarget.getAttribute("id"))
   }
 
-  const capitalizeWords = (word:string) => {
-    return word.charAt(0).toUpperCase() + word.slice(1)
-  };
-
     return (
       <>
       <Page>
-        <p className={styles.tag_line}>Guten Tag! Los geht's!</p>
         <div className={styles.page_content}>
-          <Carousel  className={styles.corousal} interval={null}>
-          {wordList.map(item => {
-                    return(
-                      <Carousel.Item key={item["word"]} className={styles.corousal_item}>
-                          <h3 className={styles.word_text}>{capitalizeWords(item["word"])}</h3>
-                          <Carousel.Caption>
-                            <p className={styles.meaning_text}>{capitalizeWords(item["meaning"])}</p>
-                          </Carousel.Caption>
-                      </Carousel.Item>
-                    )
-          })}
-            
-          </Carousel>
-        </div> 
+          <div className={styles.table}>
+            <DataGrid
+              rows={wordList}
+              columns={columns}
+              getRowId={(row) => row.word}
+              sx={{
+                overflowX: "scroll",
+                '&.MuiDataGrid-root--densityStandard .MuiDataGrid-cell': { py: '10px' },
+              }}
+              initialState={{
+                sorting: {
+                  sortModel: [{field: "word", sort: "asc"}]
+                },
+                pagination: {
+                  paginationModel: { page: 0, pageSize: 10 },
+                },
+              }}
+              pageSizeOptions={[5, 10]}
+              checkboxSelection
+              getRowHeight={() => "auto"}
+            />
+          </div>
+        </div>
       </Page>
       </>
     );
 };
+

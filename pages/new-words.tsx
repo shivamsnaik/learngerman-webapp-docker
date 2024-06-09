@@ -5,8 +5,9 @@ import { app, database } from '../firebaseConfig';
 import { collection, addDoc, getDocs, CollectionReference, setDoc, doc } from 'firebase/firestore';
 import {getAuth, signInWithEmailAndPassword, onAuthStateChanged, browserSessionPersistence} from 'firebase/auth';
 import {Spinner} from 'react-bootstrap'
+import Button from '@mui/material/Button';
 
-import Button from "../components/Button"
+//import Button from "../components/Button"
 
 export default function NewWords() {
 
