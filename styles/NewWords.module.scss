@@ -2,67 +2,28 @@
     text-align: center;
 }
 
+.pageWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .form_content {
     display: flex;
     flex-direction: column;
     flex: 1;
     flex-grow: 0;
     justify-content: center;
-
-    & :is(.username_wrapper, .word_wrapper){
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        
-        & input{
-            flex: 1;
-            margin: 20px 0 0 0;
-            flex-grow: 0;
-        }
-    }
-
-    & :is(.password_wrapper, .meaning_wrapper){
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        
-        & input{
-            flex: 1;
-            margin: 20px 0 20px 0;
-            flex-grow: 0;
-        }
-    }
-
-    & .submit_wrapper
-    {
-        display: flex;
-        justify-content: center;
-        flex: 1;
-        flex-grow: 0;
+    width: 60%;
+    margin: auto 100px auto 100px;
+    & *{
+        margin: 5px
     }
 }
 
 @media (max-width: 600px) {
     .form_content {
-        & .username_wrapper{
-            flex-direction: column;
-            align-items: center;
-
-            & input{
-                flex: 1;
-                flex-grow: 0;
-            }
-        }
-
-        & .password_wrapper{
-            flex-direction: column;
-            align-items: center;
-        
-            & input{
-                flex: 1;
-                flex-grow: 0;
-            }
-        }
+        width: 100%;
     }
 }
 
