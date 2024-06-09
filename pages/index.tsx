@@ -56,6 +56,7 @@ export default function Home() {
         <div className={styles.page_content}>
           <div className={styles.table}>
             <DataGrid
+              autoPageSize
               rows={wordList}
               columns={columns}
               getRowId={(row) => row.word}
@@ -68,10 +69,10 @@ export default function Home() {
                   sortModel: [{field: "word", sort: "asc"}]
                 },
                 pagination: {
-                  paginationModel: { page: 0, pageSize: 10 },
+                  paginationModel: { page: 0},
                 },
               }}
-              pageSizeOptions={[5, 10]}
+              pageSizeOptions={[5, 10, 20]}
               checkboxSelection
               getRowHeight={() => "auto"}
             />

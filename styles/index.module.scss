@@ -8,7 +8,7 @@ $border-color: #FF331F;
     flex-grow: 0;
 }
 .page_content{
-
+    height: 100%;
     display: flex;
     flex-direction: row;
     flex: 1;
@@ -26,8 +26,12 @@ $border-color: #FF331F;
     .page_content{
         margin: 5% 0 5% 0;
         & .table{
-            height: 100%;
-            width: 100%;
+            position: absolute;
+            max-width: 95%;
+            bottom: 0;
+            margin: 5% auto 5% auto;
+            top: 0;
+            height: 95%;
         }
 
     }
