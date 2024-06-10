@@ -12,8 +12,8 @@ import Box from '@mui/material/Box';
 
 // Defines the DataGrid header properties
 const columns: GridColDef[] = [
-  { field: 'word', headerName: 'Nouns', flex: 1 },
-  { field: 'meaning', headerName: 'Meaning', flex: 1.5, },
+  { field: 'word', headerName: 'Word', flex: 1 },
+  { field: 'meaning', headerName: 'Meaning', flex: 1, },
 ];
 
 // Capitalizes the words fetched from the server (for UI)
@@ -86,7 +86,7 @@ export default function Home() {
                 <Tab label="Adjectives" value="adjectives" />
               </TabList>
             </Box>
-            <TabPanel value="nouns">
+            <TabPanel value="nouns" className={styles.nouns_container}>
               <div className={styles.table}>
                 <DataGrid
                   autoPageSize
@@ -106,12 +106,11 @@ export default function Home() {
                     },
                   }}
                   pageSizeOptions={[5, 10, 20]}
-                  checkboxSelection
                   getRowHeight={() => "auto"}
                 />
               </div>
             </TabPanel>
-            <TabPanel value="verbs">
+            <TabPanel value="verbs" className={styles.verbs_container}>
               <div className={styles.table}>
                 <DataGrid
                   autoPageSize
@@ -120,7 +119,7 @@ export default function Home() {
                   getRowId={(row) => row.word}
                   sx={{
                     overflowX: "scroll",
-                    '&.MuiDataGrid-root--densityStandard .MuiDataGrid-cell': { py: '10px' },
+                    '&.MuiDataGrid-root--densityStandard .MuiDataGrid-cell': { py: '10px'},
                   }}
                   initialState={{
                     sorting: {
@@ -131,12 +130,11 @@ export default function Home() {
                     },
                   }}
                   pageSizeOptions={[5, 10, 20]}
-                  checkboxSelection
                   getRowHeight={() => "auto"}
                 />
               </div>
             </TabPanel>
-            <TabPanel value="adjectives">
+            <TabPanel value="adjectives" className={styles.adjectives_container}>
               <div className={styles.table}>
                 <DataGrid
                   autoPageSize
@@ -156,7 +154,6 @@ export default function Home() {
                     },
                   }}
                   pageSizeOptions={[5, 10, 20]}
-                  checkboxSelection
                   getRowHeight={() => "auto"}
                 />
               </div>

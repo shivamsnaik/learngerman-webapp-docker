@@ -14,6 +14,12 @@ $border-color: #FF331F;
     flex: 1;
     flex-grow: 0;
     justify-content: center;
+    
+    & .nouns_container, .verbs_container, .adjectives_container{
+        padding: 5px 0px;
+        margin: 0px;
+    } 
+
     & .table{
         height: 500px;
         //width: 500px;
@@ -25,6 +31,8 @@ $border-color: #FF331F;
     .page_content{
         
         & .table{
+            height: 600px;
+            width: 100%;
             position: relative;
             
             
