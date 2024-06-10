@@ -144,7 +144,7 @@ export default function NewWords() {
                 id="new-word-form"
                 component="form"
                 noValidate
-                autoComplete="on"
+                autoComplete="off"
                 className={styles.form_content}>
                 <TextField
                   error={isWordFormFilled?false:true}
