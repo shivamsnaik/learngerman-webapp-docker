@@ -11,20 +11,25 @@
 .form_content {
     display: flex;
     flex-direction: column;
-    flex: 1;
-    flex-grow: 0;
-    justify-content: center;
-    width: 60%;
-    margin: auto 100px auto 100px;
-    & *{
-        margin: 5px
+    align-items: center; 
+    & div{
+        width: 100%;
+        margin: 8px auto;  
+    }
+    & .button{
+        width: 100%;
+        margin: 10px auto;
     }
 }
 
 @media (max-width: 600px) {
     .form_content {
-        width: 100%;
+        
+        & .button{
+        }
     }
+
+    
 }
 
 

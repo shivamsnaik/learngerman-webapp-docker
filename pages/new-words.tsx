@@ -3,12 +3,15 @@ import styles from "../styles/NewWords.module.scss"
 import { useEffect, useRef, useState } from "react"
 import { app, database } from '../firebaseConfig';
 import { collection, addDoc, getDocs, CollectionReference, setDoc, doc } from 'firebase/firestore';
-import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, browserSessionPersistence } from 'firebase/auth';
+import { getAuth, signOut, signInWithEmailAndPassword, onAuthStateChanged, browserSessionPersistence } from 'firebase/auth';
 import { Spinner } from 'react-bootstrap'
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
+import Box from "@mui/material/Box";
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
+import { FormControl } from '@mui/material';
 
 const wordTypes = [
   {
@@ -28,20 +31,21 @@ const wordTypes = [
 export default function NewWords() {
 
   const [pageInitialized, setPageInitStatus] = useState(false);
+  const [isUsernameCorrect, setUsernameCorrect] = useState(true);
   const [isPasswordCorrect, setPasswordCorrect] = useState(true);
-  const username = useRef(null);
-  const password = useRef(null);
+  const [username, setUsername] = useState(null)
+  const [password, setPassword] = useState(null)
   const [word, setWord] = useState(null)
   const [meaning, setMeaning] = useState(null)
   const [wordType, setWordType] = useState(null)
-
+  const [isWordFormFilled, setWordFormFilled] = useState(true)
+  const [wordSubmitted, setWordSubmitted] = useState(false)
   const addWordResponse = useRef(null);
 
   const [userSignedIn, setUserSigninStatus] = useState(false);
 
 
   useEffect(() => {
-
     // Init firebase and constantly check for authentication state change
     const auth = getAuth();
     auth.setPersistence(browserSessionPersistence)
@@ -55,11 +59,8 @@ export default function NewWords() {
         //User logged out
         console.log("User is not logged in")
       }
-
       // Initializes the page DOM elements for user to login or enter words (if already logged in.)
       setPageInitStatus(true)
-
-
     });
 
   }, [userSignedIn]);
@@ -67,34 +68,57 @@ export default function NewWords() {
   // Authenticate the user on Firebase
   const authenticateUser = (e: any) => {
     e.preventDefault();
+
+    // Unset the "error" prop for inputs before checking the authentication
+    setUsernameCorrect(true)
+    setPasswordCorrect(true)
+
     const auth = getAuth()
-    signInWithEmailAndPassword(auth, username.current.value, password.current.value)
+    signInWithEmailAndPassword(auth, username, password)
       .then((userCredential) => {
         setUserSigninStatus(true)
         // hides the wrong password if it is being displayed 
         !isPasswordCorrect && setPasswordCorrect(true)
       })
       .catch((error) => {
+        if(error.code == "auth/missing-email")
+          setUsernameCorrect(false)
+        else if(error.code == "auth/missing-password")
+          setPasswordCorrect(false)
         console.log(error.code, error.message)
-        setPasswordCorrect(false)
+        
       });
   };
 
   // Add the entered word and its meaning to the firestore database
   const addWordToList = (event: any) => {
     event.preventDefault();
+    
+    // Disable error prop from all inputs before processing the inputs
+    setWordFormFilled(true)
 
+    // If any of the inputs are empty, throw an error
+    if(!word || !meaning || !wordType){
+      setWordFormFilled(false)
+      return;
+    }
     let collectionName = null;
-    if(wordType === "noun") {collectionName = "german-words-nouns"}
-    else if(wordType === "verb") {collectionName = "german-words-verbs"}
-    else {collectionName = "german-words-adjectives"}
+    if (wordType === "noun") { collectionName = "german-words-nouns" }
+    else if (wordType === "verb") { collectionName = "german-words-verbs" }
+    else { collectionName = "german-words-adjectives" }
     
     addDoc(collection(database, collectionName), {
       word: word,
       meaning: meaning
     })
-      .then(() => {
+      .then((res) => {
+        // Set prop to show submitted icon if word was successfully submitted
+        setWordSubmitted(true)
 
+        // Disable submitted icon after 3 seconds
+        setTimeout(() => {
+          setWordSubmitted(false)
+        }, 3000);
       })
       .catch(error => {
         console.log("ERROR: ", error.code, error.message)
@@ -116,8 +140,14 @@ export default function NewWords() {
             ?
             <div className={styles.pageWrapper}>
               <p className={styles.headline}>Enter the word and its meaning</p>
-              <div className={styles.form_content}>
+              <Box
+                id="new-word-form"
+                component="form"
+                noValidate
+                autoComplete="on"
+                className={styles.form_content}>
                 <TextField
+                  error={isWordFormFilled?false:true}
                   onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                     setWord(event.target.value);
                   }}
@@ -126,8 +156,10 @@ export default function NewWords() {
                   onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                     setMeaning(event.target.value);
                   }}
+                  error={isWordFormFilled?false:true}
                   required id="word-meaning" label="Meaning" variant="outlined" />
                 <TextField
+                  error={isWordFormFilled?false:true}
                   value={wordType}
                   onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                     setWordType(event.target.value);
@@ -139,7 +171,7 @@ export default function NewWords() {
                   defaultValue="EUR"
                   helperText="Please select the word type"
                   variant="filled"
-                  
+
                 >
                   {wordTypes.map((option) => (
                     <MenuItem key={option.value} value={option.value}>
@@ -147,27 +179,40 @@ export default function NewWords() {
                     </MenuItem>
                   ))}
                 </TextField>
-                <Button variant="contained" onClick={addWordToList}>Submit</Button>
+                <Button variant="contained" onClick={addWordToList}>
+                  <span style={{display: "flex"}}>
+                    Submit
+                    {wordSubmitted && <CheckCircleIcon/>}
+                  </span>
+                </Button>
                 <p ref={addWordResponse}></p>
-              </div>
+              </Box>
             </div>
             :
-            <>
+            <div className={styles.pageWrapper}>
               <p className={styles.headline}>Enter your credentials</p>
-              <div className={styles.form_content}>
-                <div className={styles.username_wrapper}>
-                  <input ref={username} key={"username"} type="text" name="username" required={true} placeholder="Username" />
-                </div>
-                <div className={styles.password_wrapper}>
-                  <input ref={password} key={"password"} type="password" name="password" required={true} placeholder="Password" />
-                </div>
-                {!isPasswordCorrect && <div className={styles.wrong_password_wrapper}>
-                  <p>Wrong Username/Password</p>
-                </div>
-                }
-                <Button onClick={authenticateUser}>Submit</Button>
-              </div>
-            </>
+              <Box
+                component="form"
+                noValidate
+                autoComplete="on"
+                className={styles.form_content}>
+                
+                <TextField
+                  onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                    setUsername(event.target.value);
+                  }}
+                  error={!isUsernameCorrect?true:false}
+                  required id="username" label="Username" variant="outlined" />
+                <TextField
+                  onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                    setPassword(event.target.value);
+                  }}
+                  error={!isPasswordCorrect?true:false}
+                  type="password"
+                  required id="password" label="password" variant="outlined" />
+                {true && <Button type="submit" className={styles.button} variant="contained" onClick={authenticateUser}>Submit</Button>}
+              </Box>
+            </div>
           }
 
         </>
