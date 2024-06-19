@@ -2,15 +2,24 @@
 
 This project is built using Next.js framework and containerized using Docker. 
 
+## Components Used
+**UI Design**: [Material UI](https://mui.com)  
+**Authentication**: Firebase Auth  
+**Database Management**: Firebase Database
+
 ## How to use?
 
 - Docker Compose **(recommended)**
   - If the docker is running behind an Nginx reverse-proxy with the lets-encrypt support ([click here to find how?](https://github.com/shivamsnaik/nextcloud-reverseproxy-docker)), you can alternatively run the following script to run the container assigned to a domain, e.g., portfolio.example.com
 
-    ```
-    1. docker-compose build: Builds the new changes and creates a new docker image.
-    2. docker-compose up --detach: Deploys the latest docker image on a container.
-    ```
+    
+    1. Clone the repository:
+         ```git clone git@github.com:shivamsnaik/learngerman-webapp-docker.git ```
+    1. Builds the new changes and creates a new docker image:
+         ```docker-compose build```
+    3. Deploys the latest docker image on a container:
+         ```docker-compose up --detach```
+   
 
   - **Note:** For this service to be proxied via Nginx and to support auto-ssl configuration, the following environment variables need to be modified in ```docker-compose.yaml``` and ```docker-compose-dev.yaml```: 
     ```
