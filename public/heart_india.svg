@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <g transform="matrix(0.7199999690055847, 0, 0, 0.7168989777565002, 128, 128.50865173339844)" style="">
+    <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(-175.05 -175.05000000000004) scale(3.89 3.89)">
+      <path d="M 7.222 13.502 C 16.853 3.52 31.669 4.897 41.299 14.879 L 41.024 14.318 C 41.035 36.374 41.218 65.816 41.024 87.163 L 25.979 69.089 L 7.223 49.649 C -2.407 39.667 -2.407 23.484 7.222 13.502 Z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255, 154, 50); fill-rule: nonzero; opacity: 1;" stroke-linecap="round"/>
+      <path d="M 83.216 13.502 C 74.171 3.52 59.506 3.52 50.461 13.502 L 49.222 14.869 L 49.222 87.163 L 65.599 69.09 C 65.599 69.09 65.599 69.09 65.599 69.09 L 83.215 49.65 C 92.261 39.667 92.261 23.484 83.216 13.502 Z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: #118808; fill-rule: nonzero; opacity: 1;" stroke-linecap="round"/>
+    </g>
+  </g>
+</svg>
