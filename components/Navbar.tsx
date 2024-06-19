@@ -17,10 +17,24 @@ export default function Navbar({title, navbar_list, ...props}) {
     };
 
     // Map to dynamically populate navigation links based on received props
-    const listNavbarItems = navbar_list.map((list_item) => 
-        <nav key={list_item[0]}><Link href={list_item[1]} className={`flex-grow ${styles.navlink_item}`}>{list_item[0]}</Link></nav>
+    const listNavbarItems = navbar_list.map((nav_item) => 
+        <li 
+            key={nav_item["id"]}
+            className={`
+                    ${nav_item["title"] == active?'text-blue-400 font-bold':'text-black'}
+                `}
+            onClick={() => {
+                setActive(nav_item["title"]);
+            }}
+        >
+            <Link href={`/${nav_item["id"]}`} className={`flex-grow ${styles.navlink_item}`}>
+                {nav_item["title"]}
+            </Link>
+        </li>
     )
-
+    useEffect(() =>{
+        
+    });
     return (
         <nav className='w-full text-black bg-white border-b-2  border-b-gray-100 flex items-center py-3 sm:h-[100px] fixed top-0 z-20'>
             <div className='px-3 sm:px-20 w-full flex justify-between items-center max-w-4xl mx-auto'>
@@ -32,8 +46,7 @@ export default function Navbar({title, navbar_list, ...props}) {
                         window.scrollTo(0,0);
                     }}
                 >
-                {title}
-
+                    {title}
                 </Link>
                 <ul className='list-none hidden sm:flex gap-10'>
                     {listNavbarItems}

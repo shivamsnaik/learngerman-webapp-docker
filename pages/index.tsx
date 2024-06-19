@@ -9,6 +9,7 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import Box from '@mui/material/Box';
+import Navbar from "../components/Navbar";
 
 // Defines the DataGrid header properties
 const columns: GridColDef[] = [
@@ -49,7 +50,6 @@ export default function Home() {
           const word = item.data()["word"];
           const meaning = item.data()["meaning"];
           wordsList.push({ "word": capitalizeWords(word), "meaning": capitalizeWords(meaning) })
-
           setList(wordsList)
         });
       });
@@ -75,10 +75,10 @@ export default function Home() {
   };
 
   return (
-    <>
+    <div className={`relative flex flex-1`}>
       <Page>
-        <div className={styles.page_content}>
-          <TabContext value={value}>
+        <div className={`w-full`}>
+          <TabContext value={value} >
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
               <TabList onChange={handleChange} charia-label="lab API tabs example">
                 <Tab label="Nouns" value="nouns" />
@@ -86,8 +86,8 @@ export default function Home() {
                 <Tab label="Adjectives" value="adjectives" />
               </TabList>
             </Box>
-            <TabPanel value="nouns" className={styles.nouns_container}>
-              <div className={styles.table}>
+            <TabPanel value="nouns">
+              <div>
                 <DataGrid
                   autoPageSize
                   rows={nounsList}
@@ -96,6 +96,7 @@ export default function Home() {
                   sx={{
                     overflowX: "scroll",
                     '&.MuiDataGrid-root--densityStandard .MuiDataGrid-cell': { py: '10px' },
+                    height:"400px"
                   }}
                   initialState={{
                     sorting: {
@@ -110,8 +111,8 @@ export default function Home() {
                 />
               </div>
             </TabPanel>
-            <TabPanel value="verbs" className={styles.verbs_container}>
-              <div className={styles.table}>
+            <TabPanel value="verbs">
+              <div>
                 <DataGrid
                   autoPageSize
                   rows={verbsList}
@@ -119,7 +120,8 @@ export default function Home() {
                   getRowId={(row) => row.word}
                   sx={{
                     overflowX: "scroll",
-                    '&.MuiDataGrid-root--densityStandard .MuiDataGrid-cell': { py: '10px'},
+                    '&.MuiDataGrid-root--densityStandard .MuiDataGrid-cell': { py: '10px' },
+                    height:"400px"
                   }}
                   initialState={{
                     sorting: {
@@ -134,8 +136,8 @@ export default function Home() {
                 />
               </div>
             </TabPanel>
-            <TabPanel value="adjectives" className={styles.adjectives_container}>
-              <div className={styles.table}>
+            <TabPanel value="adjectives">
+              <div>
                 <DataGrid
                   autoPageSize
                   rows={adjectiveList}
@@ -144,6 +146,7 @@ export default function Home() {
                   sx={{
                     overflowX: "scroll",
                     '&.MuiDataGrid-root--densityStandard .MuiDataGrid-cell': { py: '10px' },
+                    height:"400px"
                   }}
                   initialState={{
                     sorting: {
@@ -163,7 +166,7 @@ export default function Home() {
           </div>
         </div>
       </Page>
-    </>
+    </div>
   );
 };
 
