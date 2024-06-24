@@ -23,8 +23,8 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <Navbar title={"German Learning App"} navbar_list = {navbar_list}/>
       <Component {...pageProps} />
-      <footer className={`relative flex mt-2 py-3 border-t-2`}>
-            <div className='flex justify-center items-center w-full max-w-4xl mx-auto'>
+      <footer className={`relative flex mt-2 py-3 border-t-2 bg-footer_color border-primary_color`}>
+            <div className='flex justify-center items-center w-full max-w-4xl mx-auto text-black'>
               <p className='flex flex-row items-center'>mit &ensp;<span>
               <img src="/heart_india.svg" alt="Vercel Logo" className={`${styles.logo}`} /></span>&ensp;in Deutschland gemacht</p>
             </div>

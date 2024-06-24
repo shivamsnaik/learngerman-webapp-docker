@@ -128,7 +128,7 @@ export default function NewWords() {
 
   return (
 
-    <Page style={{ marginTop: "5rem" }}>
+    <Page classes="mt-5 items-center">
       {!pageInitialized
         ?
         <div style={{ display: "flex", justifyContent: "center" }}>
@@ -194,7 +194,7 @@ export default function NewWords() {
               <Box
                 component="form"
                 noValidate
-                autoComplete="on"
+                autoComplete="off"
                 className={styles.form_content}>
                 
                 <TextField

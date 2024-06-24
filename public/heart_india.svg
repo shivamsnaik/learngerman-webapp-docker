@@ -1,9 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
-  <g transform="matrix(0.7199999690055847, 0, 0, 0.7168989777565002, 128, 128.50865173339844)" style="">
-    <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(-175.05 -175.05000000000004) scale(3.89 3.89)">
-      <path d="M 7.222 13.502 C 16.853 3.52 31.669 4.897 41.299 14.879 L 41.024 14.318 C 41.035 36.374 41.218 65.816 41.024 87.163 L 25.979 69.089 L 7.223 49.649 C -2.407 39.667 -2.407 23.484 7.222 13.502 Z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255, 154, 50); fill-rule: nonzero; opacity: 1;" stroke-linecap="round"/>
-      <path d="M 83.216 13.502 C 74.171 3.52 59.506 3.52 50.461 13.502 L 49.222 14.869 L 49.222 87.163 L 65.599 69.09 C 65.599 69.09 65.599 69.09 65.599 69.09 L 83.215 49.65 C 92.261 39.667 92.261 23.484 83.216 13.502 Z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: #118808; fill-rule: nonzero; opacity: 1;" stroke-linecap="round"/>
+<svg viewBox="0 0 331.133 300.196" xmlns="http://www.w3.org/2000/svg">
+  <path d="M 42.747 54.897 C 68.723 20.071 144.902 25.675 147.995 76.106 C 149.021 84.923 148.103 103.49 148.135 103.181 C 148.166 164.69 149.546 201.822 149.002 261.353 C 151.495 267.824 79.58 204.449 79.58 204.449 C 83.087 206.997 28.85 156.628 28.849 156.628 C 8.145 130.474 16.771 89.723 42.747 54.897 Z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255, 154, 50); fill-rule: nonzero; opacity: 1;" stroke-linecap="round"/>
+  <path d="M 300.935 62.192 C 284.437 32.316 203.167 -0.001 184.319 77.874 L 183.485 123.455 L 184.728 262.053 L 257.683 203.931 L 301.859 165.779 C 325.489 143.21 317.433 92.068 300.935 62.192 Z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill-rule: nonzero; opacity: 1; fill: rgb(17, 136, 8);" stroke-linecap="round"/>
+  <g transform="matrix(6.092469215393066, 0, 0, 6.0993781089782715, 165.8119178299957, 146.3309610732008)" style="">
+    <circle r="9.25" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+    <circle r="8" style="paint-order: stroke markers;" fill="#FFF"/>
+    <circle r="1.6" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+    <g id="d">
+      <g id="c">
+        <g id="b">
+          <g id="a">
+            <path d="m0-8 .3 4.81409L0-.80235-.3-3.18591z" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+            <circle transform="rotate(7.5)" r="0.35" cy="-8" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+          </g>
+          <g transform="matrix(-1, 0, 0, -1, 0, 0)">
+            <path d="m0-8 .3 4.81409L0-.80235-.3-3.18591z" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+            <circle transform="rotate(7.5)" r="0.35" cy="-8" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+          </g>
+        </g>
+        <g transform="matrix(0.9659258262890683, 0.25881904510252074, -0.25881904510252074, 0.9659258262890683, 0, 0)">
+          <g>
+            <path d="m0-8 .3 4.81409L0-.80235-.3-3.18591z" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+            <circle transform="rotate(7.5)" r="0.35" cy="-8" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+          </g>
+          <g transform="matrix(-1, 0, 0, -1, 0, 0)">
+            <path d="m0-8 .3 4.81409L0-.80235-.3-3.18591z" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+            <circle transform="rotate(7.5)" r="0.35" cy="-8" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+          </g>
+        </g>
+      </g>
+      <g transform="matrix(0.8660254037844387, 0.49999999999999994, -0.49999999999999994, 0.8660254037844387, 0, 0)">
+        <g>
+          <g>
+            <path d="m0-8 .3 4.81409L0-.80235-.3-3.18591z" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+            <circle transform="rotate(7.5)" r="0.35" cy="-8" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+          </g>
+          <g transform="matrix(-1, 0, 0, -1, 0, 0)">
+            <path d="m0-8 .3 4.81409L0-.80235-.3-3.18591z" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+            <circle transform="rotate(7.5)" r="0.35" cy="-8" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+          </g>
+        </g>
+        <g transform="matrix(0.9659258262890683, 0.25881904510252074, -0.25881904510252074, 0.9659258262890683, 0, 0)">
+          <g>
+            <path d="m0-8 .3 4.81409L0-.80235-.3-3.18591z" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+            <circle transform="rotate(7.5)" r="0.35" cy="-8" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+          </g>
+          <g transform="matrix(-1, 0, 0, -1, 0, 0)">
+            <path d="m0-8 .3 4.81409L0-.80235-.3-3.18591z" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+            <circle transform="rotate(7.5)" r="0.35" cy="-8" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g transform="matrix(0.5, 0.866026, -0.866026, 0.5, 0, 0)">
+      <g>
+        <g>
+          <g>
+            <path d="m0-8 .3 4.81409L0-.80235-.3-3.18591z" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+            <circle transform="rotate(7.5)" r="0.35" cy="-8" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+          </g>
+          <g transform="matrix(-1, 0, 0, -1, 0, 0)">
+            <path d="m0-8 .3 4.81409L0-.80235-.3-3.18591z" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+            <circle transform="rotate(7.5)" r="0.35" cy="-8" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+          </g>
+        </g>
+        <g transform="matrix(0.9659258262890683, 0.25881904510252074, -0.25881904510252074, 0.9659258262890683, 0, 0)">
+          <g>
+            <path d="m0-8 .3 4.81409L0-.80235-.3-3.18591z" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+            <circle transform="rotate(7.5)" r="0.35" cy="-8" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+          </g>
+          <g transform="matrix(-1, 0, 0, -1, 0, 0)">
+            <path d="m0-8 .3 4.81409L0-.80235-.3-3.18591z" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+            <circle transform="rotate(7.5)" r="0.35" cy="-8" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+          </g>
+        </g>
+      </g>
+      <g transform="matrix(0.8660254037844387, 0.49999999999999994, -0.49999999999999994, 0.8660254037844387, 0, 0)">
+        <g>
+          <g>
+            <path d="m0-8 .3 4.81409L0-.80235-.3-3.18591z" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+            <circle transform="rotate(7.5)" r="0.35" cy="-8" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+          </g>
+          <g transform="matrix(-1, 0, 0, -1, 0, 0)">
+            <path d="m0-8 .3 4.81409L0-.80235-.3-3.18591z" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+            <circle transform="rotate(7.5)" r="0.35" cy="-8" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+          </g>
+        </g>
+        <g transform="matrix(0.9659258262890683, 0.25881904510252074, -0.25881904510252074, 0.9659258262890683, 0, 0)">
+          <g>
+            <path d="m0-8 .3 4.81409L0-.80235-.3-3.18591z" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+            <circle transform="rotate(7.5)" r="0.35" cy="-8" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+          </g>
+          <g transform="matrix(-1, 0, 0, -1, 0, 0)">
+            <path d="m0-8 .3 4.81409L0-.80235-.3-3.18591z" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+            <circle transform="rotate(7.5)" r="0.35" cy="-8" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g transform="matrix(-0.5, 0.866026, -0.866026, -0.5, 0, 0)">
+      <g>
+        <g>
+          <g>
+            <path d="m0-8 .3 4.81409L0-.80235-.3-3.18591z" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+            <circle transform="rotate(7.5)" r="0.35" cy="-8" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+          </g>
+          <g transform="matrix(-1, 0, 0, -1, 0, 0)">
+            <path d="m0-8 .3 4.81409L0-.80235-.3-3.18591z" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+            <circle transform="rotate(7.5)" r="0.35" cy="-8" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+          </g>
+        </g>
+        <g transform="matrix(0.9659258262890683, 0.25881904510252074, -0.25881904510252074, 0.9659258262890683, 0, 0)">
+          <g>
+            <path d="m0-8 .3 4.81409L0-.80235-.3-3.18591z" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+            <circle transform="rotate(7.5)" r="0.35" cy="-8" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+          </g>
+          <g transform="matrix(-1, 0, 0, -1, 0, 0)">
+            <path d="m0-8 .3 4.81409L0-.80235-.3-3.18591z" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+            <circle transform="rotate(7.5)" r="0.35" cy="-8" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+          </g>
+        </g>
+      </g>
+      <g transform="matrix(0.8660254037844387, 0.49999999999999994, -0.49999999999999994, 0.8660254037844387, 0, 0)">
+        <g>
+          <g>
+            <path d="m0-8 .3 4.81409L0-.80235-.3-3.18591z" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+            <circle transform="rotate(7.5)" r="0.35" cy="-8" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+          </g>
+          <g transform="matrix(-1, 0, 0, -1, 0, 0)">
+            <path d="m0-8 .3 4.81409L0-.80235-.3-3.18591z" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+            <circle transform="rotate(7.5)" r="0.35" cy="-8" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+          </g>
+        </g>
+        <g transform="matrix(0.9659258262890683, 0.25881904510252074, -0.25881904510252074, 0.9659258262890683, 0, 0)">
+          <g>
+            <path d="m0-8 .3 4.81409L0-.80235-.3-3.18591z" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+            <circle transform="rotate(7.5)" r="0.35" cy="-8" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+          </g>
+          <g transform="matrix(-1, 0, 0, -1, 0, 0)">
+            <path d="m0-8 .3 4.81409L0-.80235-.3-3.18591z" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+            <circle transform="rotate(7.5)" r="0.35" cy="-8" style="paint-order: stroke markers; fill: rgb(7, 3, 141);"/>
+          </g>
+        </g>
+      </g>
     </g>
   </g>
 </svg>
