@@ -13,6 +13,7 @@
     "@mui/material": "^5.15.19",
     "@mui/x-data-grid": "^7.6.2",
     "@types/react": "^18.3.3",
+    "axios": "^1.7.2",
     "bootstrap": "^5.3.3",
     "firebase": "^10.12.2",
     "next": "^14.2.3",

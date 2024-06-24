@@ -33,7 +33,9 @@ export default function Navbar({title, navbar_list, ...props}) {
         
     });
     return (
-        <nav className='w-full text-text_nav_color bg-primary_color border-b-2  border-b-gray-100 flex items-center py-3 sm:h-[100px] fixed top-0 z-20'>
+        <nav className='w-full text-text_nav_color bg-primary_color 
+                         flex items-center 
+                        py-3 sm:h-[100px] fixed top-0 z-20 drop-shadow-xl'>
             <div className='px-3 sm:px-20 w-full h-full flex justify-between items-center max-w-4xl mx-auto'>
                 <Link
                     href="/"
