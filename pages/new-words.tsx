@@ -128,7 +128,7 @@ export default function NewWords() {
 
   return (
 
-    <Page classes="mt-5 items-center">
+    <Page classes="pt-48 sm:pt-32 justify-center">
       {!pageInitialized
         ?
         <div style={{ display: "flex", justifyContent: "center" }}>
