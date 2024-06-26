@@ -1,14 +1,27 @@
 import React, { ChangeEvent, useState } from "react";
 import Page from "../components/Page";
 import { Button, Input } from "@mui/material";
-import axios from "axios";
+import axios, { AxiosRequestConfig, AxiosRequestHeaders } from "axios";
 
 const DerDieDas = () => {
 
     const [search_query, setSearchQuery] = useState("");
 
+    const headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.76 Safari/537.36',
+        'Access-Control-Allow-Origin': '*',
+        'Upgrade-Insecure-Requests': "1",
+        'Accept': "	text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8",
+        'Content-Type': 'application/json; charset=utf-8',
+        'Connection': 'Keep-Alive',
+    } 
+
     const getWordArticles = async () => {
-        const response = await axios.get(`https://api2.matetranslate.com/der-die-das/lookup_article?query=${search_query}`)
+        const response = await axios.get(
+            `https://api2.matetranslate.com/der-die-das/lookup_article?query=${search_query}`, {
+                headers
+            },
+        )
         console.log(response)
     };
 
